@@ -47,7 +47,7 @@ PLATFORM_SIGNATURES: dict[str, list[str]] = {
     "snr_nos": ["s29", "switch device"],
     "tplink_os": ["omada", "jetstream"],
     "orion_nos": ["a28f"],
-    "bdcom_os": ['baud data'],
+    "bdcom_os": ['bdcom'],
     "cdata_os": ['cdata']
 }
 
@@ -90,6 +90,14 @@ PLATFORM_COMMAND_MAP = {
         "base_commands": [
             {
                 "command": "show system-info",
+                "fields": DEFAULT_BASE_FIELDS,
+            },
+        ]
+    },
+        "bdcom_os": {
+        "base_commands": [
+            {
+                "command": "show version",
                 "fields": DEFAULT_BASE_FIELDS,
             },
         ]

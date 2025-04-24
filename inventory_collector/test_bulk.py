@@ -5,6 +5,7 @@ results = collect_inventory_bulk(targets, concurrency=10)
 
 for ip, (inv, err) in results.items():
     if inv:
-        print(f"[+] {ip}: {inv.model or 'OK'}")
+        print(f"[+] {ip}: {inv or 'OK'}")
     else:
-        print(f"[!] {ip}: ERROR: {err}")
+        if err.startswith('unsupported'):
+            print(f"[!] {ip}: ERROR: {err}")

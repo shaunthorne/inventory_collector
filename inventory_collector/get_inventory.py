@@ -14,13 +14,23 @@ from inventory_collector.config import SNMP_COMMUNITY, SNMP_VERSION, SCRAPLI_AUT
 
 # Supported collectors
 from inventory_collector.inventory.generic import GenericCollector
+from inventory_collector.inventory.custom import CustomCollector
+
 
 # enable_basic_logging('scrapli.log', level='DEBUG')
 
-PLATFORM_MAP = {
-    "dlink_os": GenericCollector,
-    "tplink_os": GenericCollector,
-    "snr_nos": GenericCollector,
+# PLATFORM_MAP = {
+#     "dlink_os": GenericCollector,
+#     "tplink_os": GenericCollector,
+#     "snr_nos": GenericCollector,
+# }
+
+DEFAULT_COLLECTOR = GenericCollector
+
+
+PLATFORM_MAP_OVERRIDES = {
+    # for future use:
+    "weird_os": CustomCollector,
 }
 
 
@@ -58,7 +68,7 @@ def get_inventory(
     if not platform:
         return None, "platform not specified"
 
-    collector_class = PLATFORM_MAP.get(platform)
+    collector_class = DEFAULT_COLLECTOR
     if not collector_class:
         return None, f"unsupported platform: {platform}"
 
