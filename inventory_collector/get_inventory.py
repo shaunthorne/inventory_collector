@@ -6,14 +6,14 @@ from scrapli.exceptions import (
     ScrapliTimeout,
 )
 from scrapli.logging import enable_basic_logging
-from inventory.models import InventoryModel
-from inventory.base import CollectorBase
+from inventory_collector.inventory.models import InventoryModel
+from inventory_collector.inventory.base import CollectorBase
 from typing import Optional, Tuple, Union, Type
 from easysnmp import Session
-from config import SNMP_COMMUNITY, SNMP_VERSION, SCRAPLI_AUTH, PLATFORM_SIGNATURES
+from inventory_collector.config import SNMP_COMMUNITY, SNMP_VERSION, SCRAPLI_AUTH, PLATFORM_SIGNATURES
 
 # Supported collectors
-from inventory.generic import GenericCollector
+from inventory_collector.inventory.generic import GenericCollector
 
 # enable_basic_logging('scrapli.log', level='DEBUG')
 

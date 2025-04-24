@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Any
 from pathlib import Path
 
-from config import TTP_TEMPLATE_DIR, TTP_MODEL_SPECIFIC_TEMPLATES
+from inventory_collector.config import TTP_TEMPLATE_DIR, TTP_MODEL_SPECIFIC_TEMPLATES
 from .models import InventoryModel
 
 class CollectorBase(ABC):

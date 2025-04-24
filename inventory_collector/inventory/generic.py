@@ -1,6 +1,6 @@
 from .base import CollectorBase
 from .models import InventoryModel
-from config import PLATFORM_COMMAND_MAP
+from inventory_collector.config import PLATFORM_COMMAND_MAP
 
 class GenericCollector(CollectorBase):
     def __init__(self, cn, ip: str, platform: str):

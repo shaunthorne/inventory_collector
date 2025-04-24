@@ -1,5 +1,5 @@
 import argparse
-from get_inventory import get_inventory
+from inventory_collector.get_inventory import get_inventory
 
 def main():
     parser = argparse.ArgumentParser(description="Collect inventory from a network device")
