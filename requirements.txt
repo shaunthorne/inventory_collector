@@ -1,0 +1,5 @@
+scrapli
+pydantic
+python-dotenv
+easysnmp
+git+https://github.com/shaunthorne/scrapli_community_extras.git#egg=scrapli_community_extras
